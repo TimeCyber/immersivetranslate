@@ -5,10 +5,10 @@
 ## 软件界面
 
 ### 设置界面
-![翻译扩展设置界面](https://raw.githubusercontent.com/USERNAME/immersivetranslate/master/images/translator-popup.png)
+![翻译扩展设置界面](https://raw.githubusercontent.com/TimeCyber/immersivetranslate/master/images/translator-popup.png)
 
 ### 网页翻译效果
-![网页翻译效果](https://raw.githubusercontent.com/USERNAME/immersivetranslate/master/images/translator-forum.png)
+![网页翻译效果](https://raw.githubusercontent.com/TimeCyber/immersivetranslate/master/images/translator-forum.png)
 
 ## 功能特点
 
