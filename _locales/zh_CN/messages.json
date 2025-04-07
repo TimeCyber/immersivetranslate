@@ -1,0 +1,10 @@
+{
+    "appName": {
+      "message": "网页实时翻译",
+      "description": "扩展名称"
+    },
+    "appDesc": {
+      "message": "自动将网页上的英文翻译成中文",
+      "description": "扩展描述"
+    }
+  }

@@ -1,0 +1,48 @@
+{
+    "name": "网页实时翻译",
+    "description": "自动将网页上的其他语言翻译成中文",
+    "version": "1.0",
+    "manifest_version": 3,
+    "default_locale": "zh_CN",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://api.fanyi.baidu.com/*",
+      "https://mt.cn-hangzhou.aliyuncs.com/*",
+      "http://localhost:*/*",
+      "http://127.0.0.1:*/*"
+    ],
+    "action": {
+      "default_popup": "popup/popup.html",
+      "default_icon": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      }
+    },
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "background": {
+      "service_worker": "scripts/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["scripts/translator.js", "scripts/content.js", "scripts/content-simple.js", "scripts/sidebar-translator.js"],
+        "css": ["styles/sidebar-button.css"],
+        "run_at": "document_end"
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["styles/*.css"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }

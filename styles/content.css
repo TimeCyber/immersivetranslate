@@ -1,0 +1,23 @@
+.translation-popup {
+  position: absolute;
+  z-index: 10000;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 1.5;
+  display: none;
+}
+
+.translation-content {
+  white-space: pre-line; /* 保留换行 */
+  word-wrap: break-word; /* 长单词自动换行 */
+}
+
+.translation-error {
+  color: red;
+  font-style: italic;
+} 

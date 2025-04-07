@@ -1,0 +1,274 @@
+/* 侧边栏翻译按钮和翻译框样式 */
+/* 作者：AI快码加编 公众号 */
+
+/* 侧边栏翻译按钮 */
+.translator-sidebar-button {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #2196F3;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 999999;
+  user-select: none;
+  transition: all 0.3s ease;
+  animation: translator-fade-in 0.5s ease-in-out;
+}
+
+/* 翻译状态提示 */
+.translator-sidebar-button::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+/* 激活状态的提示标记 */
+.translator-sidebar-button.active::after {
+  background-color: #4CAF50;
+  opacity: 1;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+}
+
+/* 按钮悬停效果 */
+.translator-sidebar-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  background-color: #0d8bf2;
+}
+
+/* 按钮按下效果 */
+.translator-sidebar-button:active {
+  transform: scale(0.95);
+}
+
+/* 按钮激活状态 - 绿色 */
+.translator-sidebar-button.active {
+  background-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  animation: button-pulse 2s infinite;
+}
+
+/* 按钮激活状态悬停 */
+.translator-sidebar-button.active:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+/* 启动动画 */
+.translator-sidebar-button.start-animation {
+  animation: start-effect 0.5s ease-out;
+}
+
+/* 停止动画 */
+.translator-sidebar-button.stop-animation {
+  animation: stop-effect 0.5s ease-out;
+}
+
+/* 段落翻译样式 */
+.translator-paragraph-translation {
+  margin: 10px 0;
+  padding: 12px 15px;
+  background-color: #f8f9fa;
+  border-left: 3px solid #2196F3;
+  border-radius: 0 4px 4px 0;
+  color: #333;
+  font-size: 1em;
+  line-height: 1.5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  transition: all 0.3s ease;
+  animation: translation-fade-in 0.3s ease-out;
+}
+
+/* 翻译结果进入动画 */
+@keyframes translation-fade-in {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 添加译文标记 */
+.translator-paragraph-translation::before {
+  content: "译文";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background-color: #2196F3;
+  color: white;
+  padding: 0 8px;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* 翻译框悬停效果 */
+.translator-paragraph-translation:hover {
+  background-color: #f0f4f8;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* 翻译错误样式 */
+.translator-paragraph-translation.translator-error {
+  border-left-color: #f44336;
+  background-color: #ffebee;
+}
+
+.translator-paragraph-translation.translator-error::before {
+  content: "错误";
+  background-color: #f44336;
+}
+
+/* 翻译加载动画 */
+.translator-loading {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-left: 3px solid #2196F3;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  animation: translation-fade-in 0.3s ease-out;
+}
+
+.translator-loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(33, 150, 243, 0.3);
+  border-radius: 50%;
+  border-top-color: #2196F3;
+  animation: spin 1s linear infinite;
+}
+
+/* 翻译处理中徽章 */
+.translator-processing-badge {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 999998;
+  animation: translator-fade-in 0.3s ease-in-out;
+}
+
+.translator-processing-icon {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+.translator-processing-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 滚动翻译状态提示 */
+.translator-scroll-indicator {
+  position: fixed;
+  bottom: 65px;
+  right: 20px;
+  background-color: rgba(76, 175, 80, 0.9);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  z-index: 999997;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: translator-fade-in 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.translator-scroll-indicator.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 动画效果 */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes translator-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes button-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+}
+
+@keyframes start-effect {
+  0% { transform: scale(1); background-color: #2196F3; }
+  50% { transform: scale(1.2); background-color: #4CAF50; }
+  100% { transform: scale(1); background-color: #4CAF50; }
+}
+
+@keyframes stop-effect {
+  0% { transform: scale(1); background-color: #4CAF50; }
+  50% { transform: scale(1.2); background-color: #2196F3; }
+  100% { transform: scale(1); background-color: #2196F3; }
+}
+
+/* 移动设备适配 */
+@media (max-width: 768px) {
+  .translator-sidebar-button {
+    bottom: 70px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+  
+  .translator-paragraph-translation {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+  
+  .translator-processing-badge {
+    bottom: 15px;
+    right: 15px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .translator-scroll-indicator {
+    bottom: 45px;
+    right: 15px;
+    font-size: 10px;
+  }
+} 
